@@ -1,0 +1,28 @@
+* emacs-go
+
+Easy Go configuration for GNU Emacs.
+
+* Quick start
+
+Install required go packages:
+#+BEGIN_SRC
+go get -t -v golang.org/x/tools/cmd/goimports
+go get -t -v golang.org/x/tools/cmd/guru
+go get -t -v github.com/rogpeppe/godef
+#+END_SRC
+
+Clone repository:
+#+BEGIN_SRC
+mkdir -p ~/.emacs.d/config
+git clone https://github.com/Difrex/emacs-go ~/.emacs.d/config/golang
+#+END_SRC
+
+Add to your *init.el*:
+#+BEGIN_SRC
+(package-install use-package)
+(add-to-list 'load-path "~/.emacs.d/config/golang")
+(require 'go-config)
+(configure-go-packages)
+#+END_SRC
+
+That's all ;)
